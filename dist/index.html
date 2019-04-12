@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang=en><head><title></title><meta charset=utf-8><meta name=mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=viewport content="width=device-width,initial-scale=1,minimal-ui"><meta name=keywords content=""><meta name=description content=""><link rel=manifest href=/manifest.json><script>(function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'onorientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        //在375px宽度的屏幕下 1rem = 100px
+                        docEl.style.fontSize = 100 * (clientWidth / 375) + 'px';
+                    };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);</script><link href=/static/css/app.2713174298ac5271d5630696018df449.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=/static/js/manifest.d97401f041364d96b25f.js></script><script type=text/javascript src=/static/js/vendor.33713157eea3bbf1d6db.js></script><script type=text/javascript src=/static/js/app.c8259b94e068077b3109.js></script></body></html>
