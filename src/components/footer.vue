@@ -1,7 +1,7 @@
 <template>
     <footer>
         <div class="footer-conent">
-            <p>{{title}}</p>
+            <p>{{footer}}</p>
         </div>
     </footer>
 </template>
@@ -10,13 +10,13 @@ export default {
   name: 'footercomponent',
   data () {
     return {
-      time: `copyright @${new Date().getFullYear()}xxxx.com`
+      time: `copyright @${new Date().getFullYear()}minchao.me`
     }
   },
-  props:['title'],
+  props:['footercontent'],
   computed:{
-      titles:function (){
-          return this._props.title;
+      footer(){
+          return this._props.footercontent +this.time;
       }
   },
   methods:{

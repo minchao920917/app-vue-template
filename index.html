@@ -11,19 +11,24 @@
     <meta name="description" content="">
     <link rel="manifest" href="/manifest.json">
     <script>
-        (function (doc, win) {
-            var docEl = doc.documentElement,
-                    resizeEvt = 'onorientationchange' in window ? 'orientationchange' : 'resize',
-                    recalc = function () {
-                        var clientWidth = docEl.clientWidth;
-                        if (!clientWidth) return;
-                        //在375px宽度的屏幕下 1rem = 100px
-                        docEl.style.fontSize = 100 * (clientWidth / 375) + 'px';
-                    };
-            if (!doc.addEventListener) return;
-            win.addEventListener(resizeEvt, recalc, false);
-            doc.addEventListener('DOMContentLoaded', recalc, false);
-        })(document, window);
+        //为页面html动态设置font-size值
+      (function (doc, win) {
+        var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            if (clientWidth >= 750) {
+              docEl.style.fontSize = '100px';
+            } else {
+              docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+            }
+            //等价于clientWidth / 750 * 100 + 'px';
+          };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);//resize
+        doc.addEventListener('DOMContentLoaded', recalc, false);//reload
+      })(document, window);
     </script>
   </head>
   <body>

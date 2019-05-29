@@ -8,7 +8,7 @@
     <!--中间内容-->
     <transition name="fade">
       <router-view>
-        <!--content-->
+        
       </router-view>
     </transition>  
 
@@ -27,8 +27,8 @@ export default {
   name: 'app',
   data(){
     return {
-      title:"hello,欢迎加入评驾前端",
-      footercontent:""
+      title:"顶部标题",
+      footercontent:"底部主题"
     }
   },
   components:{
