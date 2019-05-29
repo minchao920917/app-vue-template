@@ -1,8 +1,8 @@
 {
-  "name": "app-vue-template",
-  "version": "1.0.1",
-  "description": "a vue template",
-  "author": "mc",
+  "name": "{{projectName}}",
+  "version": "{{projectVersion}}",
+  "description": "{{projectDescription}}",
+  "author": "{{projectAuthor}}",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
